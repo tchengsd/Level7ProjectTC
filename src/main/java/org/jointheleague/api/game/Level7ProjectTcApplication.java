@@ -1,4 +1,4 @@
-package org.jointheleague.api.game.Level7ProjectTC;
+package org.jointheleague.api.game;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
