@@ -1,4 +1,4 @@
-package org.jointheleague.api.game.presentation;
+package org.jointheleague.api.unisearch.presentation;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

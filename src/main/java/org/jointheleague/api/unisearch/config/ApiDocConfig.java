@@ -1,4 +1,4 @@
-package org.jointheleague.api.game.config;
+package org.jointheleague.api.unisearch.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

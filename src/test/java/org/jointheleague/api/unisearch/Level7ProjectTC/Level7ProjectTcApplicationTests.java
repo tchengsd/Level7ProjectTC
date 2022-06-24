@@ -1,4 +1,4 @@
-package org.jointheleague.api.game.Level7ProjectTC;
+package org.jointheleague.api.unisearch.Level7ProjectTC;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

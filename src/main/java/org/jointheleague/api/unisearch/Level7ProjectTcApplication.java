@@ -1,4 +1,4 @@
-package org.jointheleague.api.game;
+package org.jointheleague.api.unisearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
