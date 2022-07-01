@@ -1,10 +1,8 @@
 package org.jointheleague.api.unisearch.repository;
 
-import java.util.List;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.jointheleague.api.unisearch.repository.dto.Result;
-import org.jointheleague.api.unisearch.repository.dto.LocResponse;
 
 @Repository
 public class LocRepository {
@@ -14,13 +12,14 @@ public class LocRepository {
     public LocRepository() {
         webClient = WebClient.builder().baseUrl(baseUrl).build();
     }
-    public List<Result> getResults(String query) {
+    public Result[] getResults(String query) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .queryParam("name",query)
+                        .queryParam("country","United States")
                         .build()
                 ).retrieve()
-                .bodyToMono(LocResponse.class)
-                .block().getResults();
+                .bodyToMono(Result[].class)
+                .block();
     }
 }
