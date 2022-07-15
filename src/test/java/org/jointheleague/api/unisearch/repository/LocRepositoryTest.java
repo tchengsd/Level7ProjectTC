@@ -37,7 +37,7 @@ public class LocRepositoryTest {
     @BeforeEach
     void setup() {
         MockitoAnnotations.initMocks(this);
-        repository = new LocRepository(client);
+        repository = new LocRepository();
     }
 
     @Test
