@@ -1,5 +1,6 @@
 package org.jointheleague.api.unisearch.presentation;
 
+import org.jointheleague.api.unisearch.repository.dto.LocResponse;
 import org.jointheleague.api.unisearch.service.LocService;
 import org.jointheleague.api.unisearch.repository.dto.Result;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +8,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -30,11 +34,14 @@ public class LocControllerTest {
         result.setCountry("COUNTRY");
         result.setName("UNIVERSITY");
         result.setStateProvince("STATE");
-        Result[] expectedResults = {result};
+        List<Result> expected =  new ArrayList<Result>();
+        expected.add(result);
+        LocResponse expectedResults = new LocResponse();
+        expectedResults.setResults(expected);
 
         when(service.getResults(query)).thenReturn(expectedResults);
         //when
-        Result[] actualResults = controller.getResults(query);
+        LocResponse actualResults = controller.getResults(query);
         //then
         assertEquals(expectedResults, actualResults);
     }
